@@ -1,7 +1,6 @@
 
 // include our fonts
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,400,700);
-
+@import url('https://fonts.googleapis.com/css?family=Slabo+13px');
 
 
 @font-face {
@@ -41,4 +40,10 @@
 // bold face
 @mixin font-bold {
 	font-weight: 700;
+}
+
+
+@mixin font-slab {
+    font-family: "Slabo 13px", serif;
+    letter-spacing: -1px;
 }
