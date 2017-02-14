@@ -98,12 +98,31 @@ header {
 .tool {
 	padding: 0;
 
+	@include respond-to( 1024px ) {
+		padding: 0 30px;
+	}
+
 	.calculator {
 		color: white;
 		@include font-title;
 		background-image: url(../img/bg-gradient.png);
 		background-position: left center;
 		background-repeat: repeat-y;
+		padding-bottom: 20px;
+		
+		@include respond-to( 768px ) { 
+			font-size: 1.2em;
+			padding-bottom: 0;
+
+			img {
+				margin-top: 20px;
+			}
+		}
+
+		@include respond-to( 1024px ) {
+			margin-top: 30px;
+			border-radius: 20px;
+		}
 
 		button, input[type=submit], .btn {
 			width: 100%;
@@ -111,13 +130,23 @@ header {
 		}
 	
 		.fourty {
-			padding: 20px 20px;
+			padding: 20px 20px 0 20px;
+			text-align: center;
+
+			@include respond-to( 768px ) {
+				padding: 20px 20px;
+			}
+
+			@include respond-to( 1150px ) {
+				padding: 20px 0 20px 40px;
+			}
 		}
 
 		.thirty {
-			padding: 20px 10px;
+			padding: 0 20px;
 			
 			@include respond-to( 768px ) {
+				padding: 20px 10px;
 				&.gradient {
 					background-image: url(../img/bg-gradient.png);
 					background-position: left center;
@@ -126,27 +155,11 @@ header {
 				}
 			}
 		}
-		
-		.fourty {
-			@include respond-to( 768px ) {
-				padding: 20px 0 20px 40px;
-			}
-		}
 
 
 		label {
 			display: inline-block;
 			margin-bottom: 5px;
-		}
-		
-		@include respond-to( 768px ) { 
-			margin-top: 30px;
-			border-radius: 20px;
-			font-size: 1.2em;
-
-			img {
-				margin-top: 20px;
-			}
 		}
 	}
 }
@@ -199,16 +212,23 @@ input[type=submit], button, .btn {
 	color: white;
 	border: 0;
 	border-radius: 10px;
-	font-size: 2.4em;
+	font-size: 2em;
 	line-height: 1.4em;
+	width: 100%;
+	box-sizing: border-box;
 	text-transform: uppercase;
 	display: block;
-	width: 90%;
 	cursor: pointer;
 	text-align: center;
 	position: relative;
 	margin: 20px auto;
 	box-shadow: 3px 3px 25px lighten( $grey, 35% );
+
+	@include respond-to( 768px ) {
+		font-size: 2.4em;
+		max-width: 40%;
+		margin: 30px auto;
+	}
 
 	span {
 		display: block;
@@ -238,13 +258,12 @@ input[type=submit], button, .btn {
 	&.calculate, &.apply {
 		background: $teal;
 	}
-
-	@include respond-to( 768px ) {
-		max-width: 40%;
-		margin: 30px auto;
-	}
 }
 
+
+.buttons {
+	padding: 0 20px;
+}
 
 
 // footer styles
