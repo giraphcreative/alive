@@ -208,7 +208,10 @@ header {
 input[type=submit], button, .btn {
 	@include font-title;
 	padding: 15px;
-	background: $green;
+	background-color: $green;
+	background-image: url(../img/bg-gradient.png);
+	background-position: left center;
+	background-repeat: repeat-y;
 	color: white;
 	border: 0;
 	border-radius: 10px;
@@ -250,13 +253,13 @@ input[type=submit], button, .btn {
 	}
 
 	&.go-back {
-		background: lighten( $grey, 20% );
+		background-color: lighten( $grey, 20% );
 		font-size: 1.5em;
 		color: white;
 	}
 
 	&.calculate, &.apply {
-		background: $teal;
+		background-color: $teal;
 	}
 }
 
