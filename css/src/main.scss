@@ -21,9 +21,11 @@ $red: #ff130d;
 
 // background-container
 .container {
-	background: white;
+	background: white url(../img/bg-body.png) bottom center no-repeat;
+	background-size: contain;
 	max-width: 1150px;
 	margin: 0 auto;
+	position: relative;
 }
 
 
@@ -42,7 +44,6 @@ header {
 .wrap {
 	max-width: 1100px;
 	margin: 0 auto;
-	position: relative;
 	@include clearfix;
 }
 
@@ -98,8 +99,21 @@ header {
 .tool {
 	padding: 0;
 
-	@include respond-to( 1024px ) {
-		padding: 0 30px;
+	h2 {
+		padding: 10px 20px;
+	}
+	
+	@include respond-to( 950px ) {
+		position: absolute;
+		top: 15px;
+		right: 25px;
+		left: 36%;
+
+		h2 {
+			padding: 0 0 10px 35%;
+			text-align: right;
+			font-size: 1.5em;
+		}
 	}
 
 	.calculator {
@@ -110,56 +124,48 @@ header {
 		background-repeat: repeat-y;
 		padding-bottom: 20px;
 		
-		@include respond-to( 768px ) { 
-			font-size: 1.2em;
+		@include respond-to( 950px ) { 
 			padding-bottom: 0;
 
 			img {
-				margin-top: 20px;
+				margin-top: 10px;
 			}
 		}
 
-		@include respond-to( 1024px ) {
-			margin-top: 30px;
+		@include respond-to( 1100px ) {
+			margin-bottom: 10px;
 			border-radius: 20px;
+		}
+
+		.third {
+			padding: 0 20px;
+			
+			@include respond-to( 768px ) {
+				padding: 5px 10px 10px;
+
+				&.gradient {
+					background-image: url(../img/bg-gradient.png);
+					background-position: left center;
+					background-repeat: repeat-y;
+					padding-left: 20px;
+				}
+			}
+		}
+
+		label {
+			display: inline-block;
+			margin-bottom: 3px;
+			font-size: 14px;
+			line-height: 14px;
+		}
+
+		p {
+			padding: 4px 0;
 		}
 
 		button, input[type=submit], .btn {
 			width: 100%;
 			margin: 0 auto;
-		}
-	
-		.fourty {
-			padding: 20px 0 0 0;
-			text-align: center;
-
-			@include respond-to( 768px ) {
-				padding: 20px 0;
-			}
-
-			@include respond-to( 1150px ) {
-				padding: 20px 0 20px;
-			}
-		}
-
-		.thirty {
-			padding: 0 20px;
-			
-			@include respond-to( 768px ) {
-				padding: 20px 10px;
-				&.gradient {
-					background-image: url(../img/bg-gradient.png);
-					background-position: left center;
-					background-repeat: repeat-y;
-					padding-left: 40px;
-				}
-			}
-		}
-
-
-		label {
-			display: inline-block;
-			margin-bottom: 5px;
 		}
 	}
 }
@@ -207,7 +213,7 @@ header {
 // button styles
 input[type=submit], button, .btn {
 	@include font-title;
-	padding: 15px;
+	padding: 10px 25px;
 	background-color: $green;
 	background-image: url(../img/bg-gradient.png);
 	background-position: left center;
@@ -215,7 +221,7 @@ input[type=submit], button, .btn {
 	color: white;
 	border: 0;
 	border-radius: 10px;
-	font-size: 2em;
+	font-size: 1.3em;
 	line-height: 1.4em;
 	width: 100%;
 	box-sizing: border-box;
@@ -224,13 +230,13 @@ input[type=submit], button, .btn {
 	cursor: pointer;
 	text-align: center;
 	position: relative;
-	margin: 20px auto;
-	box-shadow: 3px 3px 25px lighten( $grey, 35% );
+	margin: 10px auto;
+	box-shadow: 3px 3px 25px rgba( $grey, .4 );
 
 	@include respond-to( 768px ) {
-		font-size: 2.4em;
-		max-width: 40%;
-		margin: 30px auto;
+		width: auto;
+		float: right;
+		margin: 10px 0;
 	}
 
 	span {
@@ -261,11 +267,6 @@ input[type=submit], button, .btn {
 	&.calculate, &.apply {
 		background-color: $teal;
 	}
-}
-
-
-.buttons {
-	padding: 0 20px;
 }
 
 
