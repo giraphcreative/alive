@@ -98,6 +98,11 @@ header {
 // tool styles
 .tool {
 	padding: 0;
+	display: block;
+
+	&.hidden {
+		display: none;
+	}
 
 	h2 {
 		padding: 10px 20px;
@@ -177,9 +182,21 @@ header {
 	display: none;
 	text-align: center;
 	padding: 20px;
+	transition: opacity 500ms ease-in-out;
+
+	&.visible {
+		display: block;
+	}
 
 	@include respond-to( 768px ) {
 		padding: 30px;
+	}
+	
+	@include respond-to( 950px ) {
+		position: absolute;
+		top: 15px;
+		right: 25px;
+		left: 36%;
 	}
 
 	// large title
@@ -204,6 +221,15 @@ header {
 
 		&.larger {
 			font-size: 1.4em;
+		}
+	}
+
+	input[type=submit], button, .btn {
+		@include respond-to( 768px ) {
+			float: none;
+			width: 50%;
+			display: block;
+			margin: 10px auto;
 		}
 	}
 }

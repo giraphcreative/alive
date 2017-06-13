@@ -53,16 +53,13 @@ $(function(){
 	});
 
 	$(".calculate").click(function(){
-		$(".tool").slideUp( 'slow' );
-		$(".results").slideDown( 'slow' );
-		$('html,body').animate({
-			scrollTop: $( "header img" ).height()
-        }, 800);
+		$(".tool").addClass( 'hidden' );
+		$(".results").addClass( 'visible' );
 	});
 
 	$(".go-back").click(function(){
-		$(".tool").slideDown( 'slow' );
-		$(".results").slideUp( 'slow' );
+		$(".tool").removeClass( 'hidden' );
+		$(".results").removeClass( 'visible' );
 	});
 
 });
