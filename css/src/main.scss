@@ -159,8 +159,8 @@ header {
 	@include respond-to( 1024px ) {
 		position: absolute;
 		top: 15px;
-		right: 25px;
-		left: 42%;
+		right: 3%;
+		width: 52%;
 
 		h2 {
 			padding: 30px 0 40px 10%;
@@ -176,6 +176,7 @@ header {
 		background-position: left center;
 		background-size: cover;
 		padding-bottom: 20px;
+		@include clearfix;
 		
 		@include respond-to( 950px ) { 
 			padding-bottom: 0;
