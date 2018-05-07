@@ -36,6 +36,32 @@ header {
 
 	img {
 		display: block;
+		width: 100%;
+
+		&.large {
+			display: none;
+		}
+
+		@include respond-to( 768px ) {
+			&.small {
+				display: none;
+			}
+
+			&.medium {
+				display: block;
+				width: auto;
+			}
+		}
+
+		@include respond-to( 1024px ) {
+			&.medium {
+				display: none;
+			}
+
+			&.large {
+				display: block;
+			}
+		}
 	}
 }
 
@@ -129,7 +155,7 @@ header {
 		padding: 15px;
 	}
 	
-	@include respond-to( 950px ) {
+	@include respond-to( 1024px ) {
 		position: absolute;
 		top: 15px;
 		right: 25px;
@@ -147,11 +173,13 @@ header {
 		@include font-title;
 		background-image: url(../img/bg-gradient.png);
 		background-position: left center;
-		background-repeat: repeat-y;
+		background-size: cover;
 		padding-bottom: 20px;
 		
 		@include respond-to( 950px ) { 
 			padding-bottom: 0;
+			border-radius: 20px;
+			margin-bottom: 10px;
 
 			img {
 				margin-top: 10px;
@@ -159,8 +187,6 @@ header {
 		}
 
 		@include respond-to( 1100px ) {
-			margin-bottom: 10px;
-			border-radius: 20px;
 		}
 
 		.third {
