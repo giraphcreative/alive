@@ -4,10 +4,14 @@ body {
 	font-size: 85%;
 	line-height: 1.5em;
 	color: $grey;
-	background-color: #eee;
+	background-color: #fff;
+	
+	@include respond-to( 768px ) {
+		font-size: 100%;
+	}
 	
 	@include respond-to( 1024px ) {
-		font-size: 100%;
+		background-color: #eee;
 	}
 }
 
